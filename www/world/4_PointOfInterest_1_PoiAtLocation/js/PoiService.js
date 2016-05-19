@@ -2,7 +2,7 @@ function PoiService() {}
 
 PoiService.get = function() {
   return new Promise(function(resolve, reject) {
-    $.get("PUT_URL_HERE", function( data ) {
+    $.get("http://powertrip-api.azurewebsites.net/api/Meta/GetMarkerObject", function( data ) {
         resolve(data);
       }, "json");
   });
