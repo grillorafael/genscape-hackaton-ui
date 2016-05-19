@@ -1,12 +1,9 @@
 var World = {
     initiallyLoadedData: false,
     markerManager: undefined,
-    processMarkers: function(lat, lon) {
+    processMarkers: function() {
         if (World.markerManager) {
-            World.markerManager.redraw({
-                latitude: lat,
-                longitude: lon
-            });
+            World.markerManager.redraw();
             World.updateStatusMessage('redraw');
         }
     },
@@ -22,7 +19,6 @@ var World = {
         });
     },
     locationChanged: function locationChangedFn(lat, lon, alt, acc) {
-        console.log(arguments);
         if (!World.initiallyLoadedData) {
             PoiService.get().then(function(poiData) {
                 World.markerManager = MarkerManager.fromPOIJSON(poiData);
@@ -30,7 +26,7 @@ var World = {
             World.initiallyLoadedData = true;
         }
 
-        World.processMarkers(lat, lon);
+        World.processMarkers();
     },
 };
 AR.context.onLocationChanged = World.locationChanged;
