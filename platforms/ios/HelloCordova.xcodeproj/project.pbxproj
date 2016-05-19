@@ -36,6 +36,7 @@
 		8E8A3ACFB5BD49AEB8B50329 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1473168B1534C1EAC849C40 /* UIKit.framework */; };
 		8E05CDCB3B5947F6839A9D5C /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D53F151B40EA451DA7B94158 /* libc++.dylib */; };
 		1B48EF73E68D400EA88FB1AB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA115C3D44F42C788EDBF64 /* libz.dylib */; };
+		7CE09CD6A0FA4B3B9BC1D71E /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 83590C8D3F354AF5A7490B4C /* CDVInAppBrowser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,8 @@
 		F1473168B1534C1EAC849C40 /* UIKit.framework */ = {isa = PBXFileReference; name = "UIKit.framework"; path = "System/Library/Frameworks/UIKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		D53F151B40EA451DA7B94158 /* libc++.dylib */ = {isa = PBXFileReference; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = compiled.mach-o.dylib; explicitFileType = undefined; includeInIndex = 0; };
 		5DA115C3D44F42C788EDBF64 /* libz.dylib */ = {isa = PBXFileReference; name = "libz.dylib"; path = "usr/lib/libz.dylib"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = compiled.mach-o.dylib; explicitFileType = undefined; includeInIndex = 0; };
+		83590C8D3F354AF5A7490B4C /* CDVInAppBrowser.m */ = {isa = PBXFileReference; name = "CDVInAppBrowser.m"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		96722130E2E94B64B7B947DB /* CDVInAppBrowser.h */ = {isa = PBXFileReference; name = "CDVInAppBrowser.h"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +257,8 @@
 				F9E570506D214E0D9143843C /* WTStartupConfiguration.h */,
 				32A93727B2ED40138A8DD8F8 /* WTArchitectViewDebugDelegate.h */,
 				F3CF531068A64BF9ADD95177 /* WTWikitudeTypes.h */,
+				83590C8D3F354AF5A7490B4C /* CDVInAppBrowser.m */,
+				96722130E2E94B64B7B947DB /* CDVInAppBrowser.h */,
 			);
 			name = Plugins;
 			path = "HelloCordova/Plugins";
@@ -370,6 +375,7 @@
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				238011089D384CEEA8F67087 /* WTWikitudePlugin.m in Sources */,
 				B931B0940A2144558172A609 /* WTARViewController.m in Sources */,
+				7CE09CD6A0FA4B3B9BC1D71E /* CDVInAppBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,12 +3,12 @@
 <html>
 
     <head>
-    
+
     <!--  basic meta information -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="Content-Type" content="application/json; charset=utf-8">
     <meta content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes" name="viewport">
-    
+
     <title>My ARchitect World</title>
 
     <script src="architect://architect.js"></script>
@@ -25,12 +25,16 @@
 
 
     <!-- World logic-->
+    <script type="text/javascript" src="js/geolocation-util.js"></script>
+    <script type="text/javascript" src="js/Marker.js"></script>
+    <script type="text/javascript" src="js/MarkerManager.js"></script>
+    <script type="text/javascript" src="js/PoiService.js"></script>
     <script type="text/javascript" src="js/poiatlocation.js"></script>
 </head>
-    
+
     <body >
      <div data-role="page" id="page1" style="background: none;" >
-            
+
             <!-- MAIN PAGE CONTENT -->
 
             <!-- transparent footer-->
@@ -43,11 +47,11 @@
                 <div data-role="popup" id="popupInfo" class="ui-content" data-theme="e" style="max-width:350px;">
                   <p style="text-align:right;" id="status-message">Trying to find out where you are</p>
                 </div>
-                
+
             </div>
 
         </div>
 
     </body>
-    
+
 </html>

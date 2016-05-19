@@ -18,6 +18,9 @@
     <feature name="WikitudePlugin">
         <param name="ios-package" value="WTWikitudePlugin" />
     </feature>
+    <feature name="InAppBrowser">
+        <param name="ios-package" value="CDVInAppBrowser" />
+    </feature>
     <name>HelloCordova</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
