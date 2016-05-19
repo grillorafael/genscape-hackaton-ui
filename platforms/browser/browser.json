@@ -9,11 +9,24 @@
     "installed_plugins": {
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "com.wikitude.phonegap.WikitudePlugin": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },
     "dependent_plugins": {},
-    "modules": [],
+    "modules": [
+        {
+            "file": "plugins/com.wikitude.phonegap.WikitudePlugin/www/WikitudePlugin.js",
+            "id": "com.wikitude.phonegap.WikitudePlugin.WikitudePlugin",
+            "pluginId": "com.wikitude.phonegap.WikitudePlugin",
+            "clobbers": [
+                "WikitudePlugin"
+            ]
+        }
+    ],
     "plugin_metadata": {
-        "cordova-plugin-whitelist": "1.2.2"
+        "cordova-plugin-whitelist": "1.2.2",
+        "com.wikitude.phonegap.WikitudePlugin": "5.1.4"
     }
 }
