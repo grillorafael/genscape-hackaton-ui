@@ -1,4 +1,4 @@
-	
+
 	/**
 	 * Release date: 11.03.16
 	 */
@@ -9,7 +9,7 @@
 		 *  This is the SDK Key, provided to you after you purchased the Wikitude SDK from http =//www.wikitude.com/store/.
 		 *  You can obtain a free trial key at http =//www.wikitude.com/developer/licenses .
 		 */
-		this._sdkKey = "ENTER-YOUR-KEY-HERE";
+		this._sdkKey = "hlt/VBWCHDb4FmxPFFh5qjErDHr0Ao8WZB0dGCCa6xIn3tWmFA36+HNPQn3FDaeWPqCQqdynFHWqIBx/ex2M4V6RtHuLaWlokr5Uny3sCSVMUFcuFlhGPuc1xDx2hkJ8o4aQPFOTgP/wKLCfAn/5KcYplQqwr9OJbxSKcf0MUfpTYWx0ZWRfXzdm9NPM2ORjRWwKbqZnFGKihM4zkQS7GCCDeglNT9PhCLUqN3ywEc/DHK4ckU+dn1kqNAt+WRKxJUv89xaGWwYLU+LDseeWSEnJOZPGniDylP0wWZbbh+iHRV3H6oCVxeJLlUdXOcDRtRtugzalxfuWu4W4qfQS5bpMuJ0/1CqdtjXERO1RRMb8W+QPnZUyt2VZw/9LWNnf2dyspoLZ9B86jyAAm91B5A1xepyF6h39RHRMc5FiYwrrrmcxRMHtoArHYUiWenm5C6k73g+hKq0SwlcwpksphJihDcqxA8n5HGFVW2R21HYI+BUk47PpJ6a8OTM2e6lkWSJmDFc+i/vATVaMyEBv869UEiw71saUPcaUvsaDwdcnav9M6wWok8h3+b7meA1UJ+PcUhU7bE/KVFIOUEiqF7xYEi9GBzJC3zunKnOAkiHQhuKWE71YtZN67OrDea6NYFYVqONurqFGiiA4XGdPLkbdhRen+f6eEt11MZQp7ik=";
 
 		/**
 		 *  The Wikitude SDK can run in different modes.
@@ -26,14 +26,14 @@
         this.CameraPositionUndefined = 0;
         this.CameraPositionFront     = 1;
         this.CameraPositionBack      = 2;
-                       
+
         /**
          *  Start-up configuration: camera focus range restriction (for iOS only).
          */
         this.CameraFocusRangeNone = 0;
         this.CameraFocusRangeNear = 1;
         this.CameraFocusRangeFar  = 2;
-        
+
 	};
 
 
@@ -64,9 +64,9 @@
 	 *
      *  @param {function(loadedURL)}  		successCallback		function which is called after a successful launch of the AR world.
      *  @param {function(error)}		 	errorCallback		function which is called after a failed launch of the AR world.
-     *	@param {String} 					architectWorldPath	The path to a local ARchitect world or to a ARchitect world on a server or your 
+     *	@param {String} 					architectWorldPath	The path to a local ARchitect world or to a ARchitect world on a server or your
 	 *  @param {String} 					worldPath			path to an ARchitect world, either on the device or on e.g. your Dropbox.
-     *  @param {Array} 						requiredFeatures	augmented reality features: a flags mask for enabling/disabling 
+     *  @param {Array} 						requiredFeatures	augmented reality features: a flags mask for enabling/disabling
      *                                  geographic location-based (WikitudePlugin.FeatureGeo) or image recognition-based (WikitudePlugin.Feature2DTracking) tracking.
 	 *  @param {json object} (optional) startupConfiguration	represents the start-up configuration which may look like the following:
 	 *									{
@@ -75,16 +75,16 @@
 	 *											"*optionalPlatformKey*": "*optionalPlatformValue*"
 	 *                                      	}
 	 *                               	}
-	 */	 
+	 */
 	WikitudePlugin.prototype.loadARchitectWorld = function(successCallback, errorCallback, architectWorldPath, requiredFeatures, startupConfiguration) {
-        
+
 		cordova.exec(successCallback, errorCallback, "WikitudePlugin", "open", [{
 				"SDKKey": this._sdkKey,
 				"ARchitectWorldURL": architectWorldPath,
 				"RequiredFeatures": requiredFeatures,
 		    	"StartupConfiguration" : startupConfiguration
 			}]);
-		
+
 		// We add an event listener on the resume and pause event of the application life-cycle
 		document.addEventListener("resume", this.onResume, false);
 		document.addEventListener("pause", this.onPause, false);
@@ -163,9 +163,9 @@
     {
 		cordova.exec(successCallback, errorCallback, "WikitudePlugin", "captureScreen", [includeWebView, imagePathInBundleOrNullForPhotoLibrary]);
 	};
-	
+
 	/**
-	 * Use this function to set a callback that is called every time the Wikitude SDK encounters an internal error or warning. 
+	 * Use this function to set a callback that is called every time the Wikitude SDK encounters an internal error or warning.
 	 * Internal errors can occur at any time and might not be related to any WikitudePlugin function invocation.
 	 * An error code and message are passed in form of a JSON object.
 	 *
