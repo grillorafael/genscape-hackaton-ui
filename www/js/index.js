@@ -10,10 +10,10 @@ var app = {
         app.wikitudePlugin = cordova.require("com.wikitude.phonegap.WikitudePlugin.WikitudePlugin");
         app.wikitudePlugin._sdkKey = 'hlt/VBWCHDb4FmxPFFh5qjErDHr0Ao8WZB0dGCCa6xIn3tWmFA36+HNPQn3FDaeWPqCQqdynFHWqIBx/ex2M4V6RtHuLaWlokr5Uny3sCSVMUFcuFlhGPuc1xDx2hkJ8o4aQPFOTgP/wKLCfAn/5KcYplQqwr9OJbxSKcf0MUfpTYWx0ZWRfXzdm9NPM2ORjRWwKbqZnFGKihM4zkQS7GCCDeglNT9PhCLUqN3ywEc/DHK4ckU+dn1kqNAt+WRKxJUv89xaGWwYLU+LDseeWSEnJOZPGniDylP0wWZbbh+iHRV3H6oCVxeJLlUdXOcDRtRtugzalxfuWu4W4qfQS5bpMuJ0/1CqdtjXERO1RRMb8W+QPnZUyt2VZw/9LWNnf2dyspoLZ9B86jyAAm91B5A1xepyF6h39RHRMc5FiYwrrrmcxRMHtoArHYUiWenm5C6k73g+hKq0SwlcwpksphJihDcqxA8n5HGFVW2R21HYI+BUk47PpJ6a8OTM2e6lkWSJmDFc+i/vATVaMyEBv869UEiw71saUPcaUvsaDwdcnav9M6wWok8h3+b7meA1UJ+PcUhU7bE/KVFIOUEiqF7xYEi9GBzJC3zunKnOAkiHQhuKWE71YtZN67OrDea6NYFYVqONurqFGiiA4XGdPLkbdhRen+f6eEt11MZQp7ik=';
 
-        app.loadARchitectWorld({
-            "path": "www/world/cassino/index.html",
+        app.loadARchitectWorld( {
+            "path": "www/world/fire-exit/index.html",
             "requiredFeatures": [
-                "geo"
+                "2d_tracking"
             ],
             "startupConfiguration": {
                 "camera_position": "back"
