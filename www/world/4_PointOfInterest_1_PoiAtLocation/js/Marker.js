@@ -31,8 +31,8 @@ Marker.process = function(data, template) {
     .replace('{{CurrentPower}}', Marker.withUnit(data.CurrentPower))
     .replace('{{DailyPower}}', Marker.withUnit(data.DailyPower))
     .replace('{{MonthlyPower}}', Marker.withUnit(data.MonthlyPower))
-    .replace('{{Rooms}}', Marker.withUnit(data.Rooms))
-    .replace('{{TotalGamingSpaceSqM}}', Marker.withUnit(data.TotalGamingSpaceSqM));
+    .replace('{{Rooms}}', data.Rooms)
+    .replace('{{TotalGamingSpaceSqM}}', data.TotalGamingSpaceSqM);
 };
 
 Marker.withUnit = function(number) {
