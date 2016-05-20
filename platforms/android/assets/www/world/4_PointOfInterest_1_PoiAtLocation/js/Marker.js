@@ -1,30 +1,25 @@
 function Marker(poi) {
     var markerLocation = new AR.GeoLocation(Number(poi.Lat), Number(poi.Long), poi.altitude || 650);
 
-    var htmlDrawable = new AR.HtmlDrawable({ html: Marker.process(poi, $('template#hotel-overlay').html()) }, Marker.DEFAULT_SIZE, {
+    this.htmlDrawable = new AR.HtmlDrawable({ html: Marker.process(poi, $('template#hotel-overlay').html()) }, Marker.DEFAULT_SIZE, {
         offsetX: 0,
-        offsetY: -3,
-        onClick: function() { window.open(poi.Website, '_system', ''); },
+        offsetY: 0,
+        onClick: function() { cordova.InAppBrowser.open('http://' + poi.Website, '_system'); },
         viewportWidth: 300,
         viewportHeight: 300,
         horizontalAnchor: AR.CONST.HORIZONTAL_ANCHOR.LEFT,
         opacity: 0.5
     });
 
-    this.drawables = [htmlDrawable];
-    this.arObject = new AR.GeoObject(markerLocation, {
-        drawables: {
-            cam: this.drawables
-        }
-    });
+    this.location = markerLocation;
 }
 
 Marker.prototype.hide = function() {
-    this.arObject.drawables.removeCamDrawable();
+  if(this.arObject) { this.arObject.destroy(); this.arObject = undefined; }
 };
 
 Marker.prototype.show = function() {
-    this.arObject.drawables.addCamDrawable(this.drawables);
+  this.arObject = new AR.GeoObject(this.location, { drawables: { cam: this.htmlDrawable } });
 };
 
 Marker.DEFAULT_SIZE = 5;
@@ -35,9 +30,11 @@ Marker.process = function(data, template) {
     .replace('{{Name}}', data.Name)
     .replace('{{CurrentPower}}', Marker.withUnit(data.CurrentPower))
     .replace('{{DailyPower}}', Marker.withUnit(data.DailyPower))
-    .replace('{{MonthlyPower}}', Marker.withUnit(data.MonthlyPower));
+    .replace('{{MonthlyPower}}', Marker.withUnit(data.MonthlyPower))
+    .replace('{{Rooms}}', Marker.withUnit(data.Rooms))
+    .replace('{{TotalGamingSpaceSqM}}', Marker.withUnit(data.TotalGamingSpaceSqM));
 };
 
 Marker.withUnit = function(number) {
-    return number + Marker.POWER_UNIT;
+    return (number || 0) + Marker.POWER_UNIT;
 }

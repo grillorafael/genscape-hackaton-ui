@@ -24,7 +24,6 @@
     <script type="text/javascript" src="jquery/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="jquery/jquery.mobile-1.3.2.min.js"></script>
 
-
     <!-- World logic-->
     <script type="text/javascript" src="js/geolocation-util.js"></script>
     <script type="text/javascript" src="js/Marker.js"></script>
@@ -39,23 +38,60 @@
             html,
             body,
             .overlay {
-                width: 100%;
-                height: 100%;
+                width: 280px;
             }
 
             .overlay {
-                border-radius: 10px;
+                font-size: 20px;
                 padding: 10px;
-                background: blue;
+                background: #5E9687;
                 color: white;
+            }
+
+            section.value {
+              display: inline-block;
+            }
+
+            header, footer {
+              margin-left: -10px;
+              margin-right: -10px;
+              text-align: center;
+            }
+
+            header {
+              border-bottom: 2px solid #385a51;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              padding-bottom: 10px;
+              padding-left: 10px;
+              padding-right: 10px;
             }
         </style>
         <section class="overlay">
             <header>{{Name}}</header>
             <section class="data">
-                <section class="item">{{CurrentPower}}</section>
-                <section class="item">{{DailyPower}}</section>
-                <section class="item">{{MonthlyPower}}</section>
+                <section class="item">
+                  Current Consumption:
+                  <section class="value">{{CurrentPower}}</section>
+                </section>
+                <section class="item">
+                  Daily Consumption:
+                  <section class="value">{{DailyPower}}</section>
+                </section>
+                <section class="item">
+                  Monthly Consumption:
+                  <span class="value">{{MonthlyPower}}</span>
+                </section>
+
+                <section class="item">
+                  Rooms:
+                  <span class="value">{{Rooms}}</span>
+                </section>
+                <section class="item">
+                  Gaming Space:
+                  <span class="value">{{TotalGamingSpaceSqM}} m<sup>2</sup></span>
+                </section>
             </section>
         </section>
     </template>

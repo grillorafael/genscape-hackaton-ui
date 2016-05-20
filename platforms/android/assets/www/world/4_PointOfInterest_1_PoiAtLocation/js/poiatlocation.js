@@ -19,9 +19,13 @@ var World = {
         });
     },
     locationChanged: function locationChangedFn(lat, lon, alt, acc) {
+        console.log('Position Change', arguments);
+        console.log(World);
         if (!World.initiallyLoadedData) {
             PoiService.get().then(function(poiData) {
+                console.log('Processing data response');
                 World.markerManager = MarkerManager.fromPOIJSON(poiData);
+                World.processMarkers();
             });
             World.initiallyLoadedData = true;
         }

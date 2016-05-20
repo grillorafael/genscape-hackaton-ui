@@ -6,7 +6,7 @@ MarkerManager.prototype.addMarker = function(marker) {};
 MarkerManager.prototype.addMarkers = function(markers) {};
 MarkerManager.prototype.redraw = function(currentLocation) {
   this.markers.forEach(function(m) {
-    var location = m.arObject.locations[0];
+    var location = m.location;
     var distanceToUser = location.distanceToUser();
     console.log('Distance to user', distanceToUser);
     if(distanceToUser <= MarkerManager.DISTANCE_THRESHOLD) m.show();
