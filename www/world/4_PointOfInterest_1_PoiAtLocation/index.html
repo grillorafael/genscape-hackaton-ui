@@ -66,31 +66,42 @@
               padding-bottom: 10px;
               padding-left: 10px;
               padding-right: 10px;
+              margin-bottom: 10px;
             }
         </style>
         <section class="overlay">
             <header>{{Name}}</header>
             <section class="data">
                 <section class="item">
-                  Current Consumption:
+                  Monthly Bill:
+                  <section class="value">${{MonthlyPowerCost}}</section>
+                </section>
+
+                <section class="item">
+                  Current:
                   <section class="value">{{CurrentPower}}</section>
                 </section>
                 <section class="item">
-                  Daily Consumption:
+                  Daily:
                   <section class="value">{{DailyPower}}</section>
                 </section>
                 <section class="item">
-                  Monthly Consumption:
-                  <span class="value">{{MonthlyPower}}</span>
+                  Monthly:
+                  <section class="value">{{MonthlyPower}}</section>
+                </section>
+
+                <section class="item">
+                  Distance:
+                  <section class="value">{{Distance}} m</section>
                 </section>
 
                 <section class="item">
                   Rooms:
-                  <span class="value">{{Rooms}}</span>
+                  <section class="value">{{Rooms}}</section>
                 </section>
                 <section class="item">
                   Gaming Space:
-                  <span class="value">{{TotalGamingSpaceSqM}} m<sup>2</sup></span>
+                  <section class="value">{{TotalGamingSpaceSqM}} m<sup>2</sup></section>
                 </section>
             </section>
         </section>

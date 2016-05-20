@@ -14,7 +14,7 @@ MarkerManager.prototype.redraw = function(currentLocation) {
   });
 };
 
-MarkerManager.DISTANCE_THRESHOLD = 600;
+MarkerManager.DISTANCE_THRESHOLD = 450;
 MarkerManager.fromPOIJSON = function(poiJSON) {
   return new MarkerManager(poiJSON.map(function(poi) {
     return new Marker(poi);
